@@ -1,26 +1,49 @@
 import React from "react";
-import { Counter } from "../../features/counter";
-import logo from "./images/logo.svg";
-import "./home.css";
+import { Form, Input, Button, Checkbox } from 'antd';
+import { useNavigate } from 'react-router-dom'
 
-export const Home: React.FC = () => {
+export const Home = () => {
+  const navigate = useNavigate()
+  const onFinish = (values: any) => {
+    console.log('Success:', values);
+    navigate(`/${values.username}`)
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
-    <main className="page page--home">
-      <section className="hero">
-        <img src={logo} className="hero__logo" alt="logo" />
-        <Counter className="hero__counter" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="hero__link"
-          href="https://effector.now.sh/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Effector
-        </a>
-      </section>
-    </main>
+    <Form
+      name="basic"
+      labelCol={{ span: 8 }}
+      wrapperCol={{ span: 16 }}
+      initialValues={{ remember: true }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+      autoComplete="off"
+    >
+      <Form.Item
+        label="Username"
+        name="username"
+        rules={[{ required: true, message: 'Please input your username!' }]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Password"
+        name="password"
+        rules={[{ required: true, message: 'Please input your password!' }]}
+      >
+        <Input.Password />
+      </Form.Item>
+
+      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
   );
 };
