@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/insta-leaver/static/css/main.6dd5a218.css",
+    "main.js": "/insta-leaver/static/js/main.d1409a26.js",
+    "static/js/377.0fe55994.chunk.js": "/insta-leaver/static/js/377.0fe55994.chunk.js",
+    "index.html": "/insta-leaver/index.html",
+    "main.6dd5a218.css.map": "/insta-leaver/static/css/main.6dd5a218.css.map",
+    "main.d1409a26.js.map": "/insta-leaver/static/js/main.d1409a26.js.map",
+    "377.0fe55994.chunk.js.map": "/insta-leaver/static/js/377.0fe55994.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6dd5a218.css",
+    "static/js/main.d1409a26.js"
+  ]
+}
